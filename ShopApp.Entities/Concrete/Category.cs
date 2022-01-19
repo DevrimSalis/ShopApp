@@ -2,10 +2,9 @@
 
 namespace ShopApp.Entities.Concrete;
 
-public class Category : IEntity
+public class Category : EntityBase, IEntity
 {
-    //This Project Use NorthwindDB
-    public int CategoryID { get; set; }
-    public string CategoryName { get; set; }
+    public string Name { get; set; }
     public string Description { get; set; }
+    public ICollection<Product> Products { get; set; }
 }

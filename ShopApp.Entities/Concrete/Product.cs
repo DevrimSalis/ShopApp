@@ -1,15 +1,19 @@
-﻿using ShopApp.Shared.Entities.Abstract;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using ShopApp.Shared.Entities.Abstract;
 
 namespace ShopApp.Entities.Concrete;
 
-public class Product : IEntity
+public class Product :EntityBase ,IEntity
 {
-    //This Project Use NorthwindDB
-    public int ProductID { get; set; }
-    public string ProductName { get; set; }
-    public int CategoryId { get; set; }
-    public string QuantityPerUnit { get; set; }
+    public string Title { get; set; }
+    public string Description  { get; set; }
+    public string ImageUrl { get; set; }
+    public int QuantityPerUnit { get; set; }
     public decimal UnitPrice { get; set; }
-    public short UnitsInStock { get; set; }
-    public short UnitsOnOrder { get; set; }
+    public int UnitsInStock { get; set; }
+    public int CategoryId { get; set; }
+    public Category Category { get; set; }
+    public int UserId { get; set; }
+    public User User { get; set; }
+    public ICollection<Order> Orders { get; set; }
 }

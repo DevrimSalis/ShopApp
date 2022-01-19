@@ -2,14 +2,13 @@
 
 namespace ShopApp.Entities.Concrete;
 
-public class Order : IEntity
+public class Order : EntityBase, IEntity
 {
-    //This Project Use NorthwindDB
-    public int OrderID { get; set; }
-    public byte CustomerID { get; set; }
-    public int EmployeeID { get; set; }
-    public DateTime OrderDate { get; set; }
-    public string ShipName { get; set; }
-    public string ShipAddress { get; set; }
-    public string ShipCity { get; set; }
+    public string OrderAddress { get; set; }
+    public int CustomerId { get; set; }
+    public Customer Customer { get; set; }
+    public int ProductId { get; set; }
+    public Product Product { get; set; }
+    public int UserId { get; set; }
+    public User User { get; set; }
 }
